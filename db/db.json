@@ -2,21 +2,7 @@
   {
     "title": "Note Title",
     "text": "Note Text",
-    "id": "12345"
-  },
-  {
-    "title": "Another new note",
-    "text": "More new text\n",
-    "id": "b1ac00ac-dd1a-4704-91d3-b96b5c038c28"
-  },
-  {
-    "title": "Add a third note",
-    "text": "third note text\n",
-    "id": "ace146fe-b32f-43c8-b70f-5ea5e2770a35"
-  },
-  {
-    "title": "What about this note?",
-    "text": "Can I delete it?",
-    "id": "b9d12030-91fd-4c54-a1a1-af36014ed171"
+    "id": ""
   }
+
 ]
