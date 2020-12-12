@@ -4,9 +4,6 @@ const htmlRoutes =require ('./routes/htmlRoutes');
 
 const express = require('express');
 
-//create route that the front-end can request data from
-// const { db } = require('./db/db');
-
 const PORT = process.env.PORT|| 3002
 
 //assign express() to app variable so can later chain on other methods to Express.js server.
