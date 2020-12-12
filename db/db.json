@@ -5,10 +5,6 @@
     "id": "12345"
   },
   {
-    "title": "Ann's New Note",
-    "text": "Some New Text that Ann Created"
-  },
-  {
     "title": "Another new note",
     "text": "More new text\n",
     "id": "b1ac00ac-dd1a-4704-91d3-b96b5c038c28"
@@ -17,11 +13,6 @@
     "title": "Add a third note",
     "text": "third note text\n",
     "id": "ace146fe-b32f-43c8-b70f-5ea5e2770a35"
-  },
-  {
-    "title": "Yay my notes are back",
-    "text": "YAY YAY YAY",
-    "id": "1b4bc27b-ba5a-4389-a3ff-bcc1facaf72b"
   },
   {
     "title": "What about this note?",
