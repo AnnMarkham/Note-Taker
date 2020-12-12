@@ -1,11 +1,11 @@
 //After create api& html routes:
-//const apiRoutes= require('./routes/apiRoutes');
+const apiRoutes= require('./routes/apiRoutes');
 const htmlRoutes =require ('./routes/htmlRoutes');
 
 const express = require('express');
 
 //create route that the front-end can request data from
-const { db } = require('./db/db');
+// const { db } = require('./db/db');
 
 const PORT = process.env.PORT|| 3002
 
@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //rel paths to routes  --- uncomment after routes are added
-//app.use('/api', apiRoutes);
+app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
 app.use(express.static('public'));

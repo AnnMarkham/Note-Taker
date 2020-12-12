@@ -1,34 +1,34 @@
-const { db } = require('./db/db');
+// const { db } = require('./db/db');
 const router = require('express').Router();
 
-//II.  API Routes
+// const notes = require('../lib/notes.js');
+//II.  API Routes 
+  // import readNotes function from lib/notes.js
+ const {readNotes, writeNotes} = require('../lib/notes.js');
+
 
 // II -1. GET/api/notes 
-  //a. read db.json &
-  //b.  return all saved notes as json
+  //a. read db.json (Create function (readNotes function in lib/notes.js); call in get function below).  &
+  //b.  return all saved notes as json (update get function to res.join(result of readNotes function call))
 
 router.get('/notes', (req,res) => {
-  console.log('get');
-  console.log('notes');
-  res.json();
+  notes = readNotes(); // a.  call function created in notes.js
+  res.json(notes); // b. return notes as json
 });
 
 // II -2.  POST/api/notes 
   //a. receive a new note to
   //b. save on the request body,  
       //** you will need a way to give each note a unique id when it is saved 
-          // (look into npm packages that could do this for you)
-          // or use the method that zookeeper used -- based on zookeper.length?
+          //i.  (look into npm packages that could do this for you)
   //c. add it (new note) to the db.json file, and then
   //d. return the new note to the client
 
-  
-
-
-router.post('/notes', (req, res) => {
+ router.post('/notes', (req, res) => {
   const newNote = req.body;
-  console.log('Post Success!');
-  console.log(newNote);
+  notes.push(newNote);
+  writeNotes(notes);
+  res.json(newNote);
 });
 
 //BONUS -  Handle Delete Requests
