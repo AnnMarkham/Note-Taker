@@ -1,6 +1,11 @@
 [
-  {"title": "Note Title",
-    "text":"Note Text",
-    "id":"12345"
-    }
-  ]
+  {
+    "title": "Note Title",
+    "text": "Note Text",
+    "id": "12345"
+  },
+  {
+    "title": "Ann's New Note",
+    "text": "Some New Text that Ann Created"
+  }
+]
