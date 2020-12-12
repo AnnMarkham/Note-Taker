@@ -5,8 +5,7 @@ const { v4: uuidv4 } = require('uuid');
 // const notes = require('../lib/notes.js');
 //II.  API Routes 
   // import readNotes function from lib/notes.js
- const {readNotes, writeNotes, findById} = require('../lib/notes.js');
-
+ const {readNotes, writeNotes, findById} = require('../lib/notes.js');  
 
 // II -1. GET/api/notes (When open page)
 //a. read db.json (Create function (readNotes function in lib/notes.js); call in get function below).  &
@@ -38,16 +37,14 @@ router.get('/notes/:id', (req, res) => {
 
 //BONUS -  Handle Delete Requests
 // III - DELETE/api/notes: id
-  //a. receives a query parameter containing the id of the note to delete. 
+//a. receives a query parameter containing the id of the note to delete. 
 router.delete('/notes:id?', (req, res) => { 
-     //b. To delete a note:
-      //i. read all notes from the db.json filec
-      const id = req.query.id;
+ const id = req.query.id;
   notes = readNotes();
-      //ii. remove the note with the given id property
+ //ii. remove the note with the given id property
   newNotes = notes.filter(note => note.id != id);
-      //iii. rewrite the notes to the db.json file
-       writeNotes(newNotes);
+  //iii. rewrite the notes to the db.json file
+  writeNotes(newNotes);
   res.send(JSON.stringify(newNotes));
 });
 
