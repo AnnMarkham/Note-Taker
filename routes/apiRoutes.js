@@ -19,8 +19,8 @@ const { v4: uuidv4 } = require('uuid');
 
 // get a saved note by id
 router.get('/notes/:id', (req, res) => {
-  notes = readNotes();
-  const result = findById(req.params.id, notes);
+  notes = readNotes();      // call readNotes function created in notes.js & save value in notes variable
+  const result = findById(req.params.id, notes);  //(call findById function created in notes.js -- filters notesArray for note.id)
   res.json(result);
 }); 
 
@@ -29,21 +29,22 @@ router.get('/notes/:id', (req, res) => {
   router.post('/notes', (req, res) => {  
   //b. save on the request body,       
   const newNote = req.body;                 
-
-  //** you will need a way to give each note a unique id when it is saved (look into npm packages that could do this for you) 
+  //give each note a unique id when it is saved (look into npm packages that could do this for you) 
   newNote.id= uuidv4(); 
-  
-//c. add it (new note) to the db.json file, and then  d. return the new note to the client
+  //c. add it (new note) to the db.json file, and then  d. return the new note to the client
   notes.push(newNote);
   writeNotes(notes);
   res.json(newNote);
 });
 
 //BONUS -  Handle Delete Requests
-// III - DELETE/apio/notes: id
+// III - DELETE/api/notes: id
   //a. receives a query parameter containing the id of the note to delete. 
+  // router.delete('/notes:id?', (req, res)=>{
+
+  // } )
   //b. To delete a note:
-      //i. readd all notes from the db.json file
+      //i. read all notes from the db.json file
       //ii. remove the note with the given id property
       //iii. rewrite the notes to the db.json file
 
